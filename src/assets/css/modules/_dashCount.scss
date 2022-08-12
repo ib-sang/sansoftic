@@ -1,0 +1,62 @@
+.dash-count{
+    margin-top: space(10);
+    @extend %container;
+    display: grid;
+    grid-gap: space(2);
+    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+}
+.dash-title{
+    color: rgb(51, 51, 51);
+    font-size: em(10);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 2.4
+}
+.dash-item{
+    border-left: 3px solid rgba(238, 117, 37, 0.863);
+    border-radius: 4px;
+    @extend %shadow;
+    padding: space(1.5) space(1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.student-item{
+    border-left: 3px solid rgba(23, 20, 201, 0.863);
+}
+.university-item{
+    border-left: 3px solid rgba(20, 201, 44, 0.863);
+}
+.theme-item{
+    border-left: 3px solid rgba(98, 20, 201, 0.863);
+}
+.dash-number{
+    font-size: em(16);
+    font-weight: 600;
+}
+
+.dash-icon{
+    padding: 10px;
+    border-radius: 50%;
+    align-content: center;
+    background-color: rgba(238, 117, 37, 0.863);
+    color: #fff;
+}
+.histo{
+    color: rgba(23, 20, 201, 0.685);
+}
+.student-icon{
+    background-color: rgba(23, 20, 201, 0.863);
+    color: rgb(250, 250, 250);
+}
+.university-icon{
+    background-color: rgba(20, 201, 44, 0.863);
+    color: rgb(250, 250, 250);
+}
+
+.theme-icon{
+    background-color: rgba(98, 20, 201, 0.863);
+    color: rgb(250, 250, 250);
+}
