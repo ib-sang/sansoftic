@@ -23,10 +23,11 @@ Digital Creative enterprise Specializingin: Video Production, wed Design, Brandi
                 <div className="foot-body-item reveal_3">
                     <h2 className="foot-title2">SANSOFTIC</h2>
                     <ul>
-                        <li className="foot-item"><Link to='' className="foot-nav-link trans-border1">Accueil</Link></li>
-                        <li className="foot-item"><Link to='' className="foot-nav-link trans-border1">Services</Link></li>
-                        <li className="foot-item"><Link to='' className="foot-nav-link trans-border1">Contacts</Link></li>
-                        <li className="foot-item"><Link to='' className="foot-nav-link trans-border1">A propos</Link></li>
+                        <li className="foot-item"><Link to='/' className="foot-nav-link trans-border1">Accueil</Link></li>
+                        <li className="foot-item"><Link to='#services' className="foot-nav-link trans-border1">Services</Link></li>
+                        <li className="foot-item"><Link to='#contacts' className="foot-nav-link trans-border1">Contacts</Link></li>
+                        <li className="foot-item"><Link to='#abouts' className="foot-nav-link trans-border1">About</Link></li>
+                        <li className="foot-item"><Link to='' className="foot-nav-link trans-border1">Blog</Link></li>
                     </ul>
                 </div>
                 <div className="foot-body-item reveal_4">

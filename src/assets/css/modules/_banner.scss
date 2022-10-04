@@ -103,13 +103,13 @@
 }
 
 
-
 .banner-img{
     overflow: hidden;
     height: 380px;
-    width: calc(50% - 10px);
+    width: 50%;
     position: absolute;
     top: 60px;
+    left: 30px;
     border-top-left-radius: 10px;
     border-top-right-radius: 80px;
     border-bottom-left-radius: 10px;

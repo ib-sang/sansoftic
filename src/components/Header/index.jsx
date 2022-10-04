@@ -39,10 +39,10 @@ const Header = ()=>{
                 <div className={toggle ? "is-toggle ": "no-toggle"} >
                     <nav className="navbars" onClick={handleToggle}>
                         <ul className="nav-items">
-                            <li className="nav-item"><Link to={HOME} className="nav-link">Accueil</Link></li>
-                            <li className="nav-item"><Link to='/#services' className="nav-link">Services</Link></li>
+                            <li className="nav-item"><Link to={HOME} className="nav-link">Home</Link></li>
+                            <li className="nav-item"><Link to='#services' className="nav-link">Services</Link></li>
                             <li className="nav-item"><Link to='#contacts' className="nav-link">Contact</Link></li>
-                            <li className="nav-item"><Link to='#abouts' className="nav-link">A propos</Link></li>
+                            <li className="nav-item"><Link to='#abouts' className="nav-link">About</Link></li>
                             <li className="nav-item"><Link to='#blog' className="nav-link">Blog</Link></li>
                         </ul>
                     </nav>
@@ -52,10 +52,10 @@ const Header = ()=>{
             <div className="header-toggle">
                 <nav className="navbars">
                     <ul className="nav-items">
-                        <li className="nav-item"><Link to={HOME} className={"nav-link trans-border"}>Accueil</Link></li>
+                        <li className="nav-item"><Link to={HOME} className={"nav-link trans-border"}>Home</Link></li>
                         <li className="nav-item"><Link to='#services' className={handleActive('services') ? "nav-link trans-border-at":"nav-link trans-border"}>Services</Link></li>
                         <li className="nav-item"><Link to='#contacts' className={handleActive('contacts') ? "nav-link trans-border-at":"nav-link trans-border"}>Contact</Link></li>
-                        <li className="nav-item"><Link to='/#abouts' className={handleActive('abouts') ? "nav-link trans-border-at":"nav-link trans-border"}>A propos</Link></li>
+                        <li className="nav-item"><Link to='#abouts' className={handleActive('abouts') ? "nav-link trans-border-at":"nav-link trans-border"}>About</Link></li>
                         <li className="nav-item"><Link to='' className={handleActive('blogs') ? "nav-link trans-border-at":"nav-link trans-border"}>Blog</Link></li>
                     </ul>
                 </nav>

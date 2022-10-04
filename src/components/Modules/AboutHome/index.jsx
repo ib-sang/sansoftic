@@ -43,9 +43,9 @@ const AboutHome = () => {
                         <p className="toggle-para">
                         Our primary mission is to educate people about new technologies all over the world. And how these technologies can help us in our lives.
                         </p>
-                        <div className="toggle-about-flex">
-                            <div>
-                                <Icon name="user1"/>
+                        <div className="toggle-about-flex-no">
+                            <div className="toglle-svg">
+                                <Icon name="quote"/>
                             </div>
                             <div>
                                 <p className="toggle-para">Sometimes when you innovate, you make mistakes. It is best to admit them quickly, and get on with improving your other innovation</p>

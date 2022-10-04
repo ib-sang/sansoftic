@@ -124,8 +124,13 @@
     }
 }
 
+.toglle-svg svg{
+    width: 60px !important;
+    height: 60px !important;
+}
 
-.toggle-about-flex{
+.toggle-about-flex,
+.toggle-about-flex-no{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -134,8 +139,8 @@
     }
     margin-top: space(2);
     svg{
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
         color: var(--contrast25);
     }
     p{
@@ -149,6 +154,10 @@
         }
     }
     
+}
+
+.toggle-about-flex-no{
+    align-items: flex-start !important;
 }
 
 .toggle-about-user{
