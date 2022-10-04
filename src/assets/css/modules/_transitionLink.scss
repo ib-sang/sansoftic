@@ -1,0 +1,68 @@
+.trans-border{
+    background: linear-gradient(to top,#f25353 0%, #f25353 4px, transparent 5px) no-repeat left bottom / 0  100%;
+    transition: background-size cubic-bezier(0.175, 0.885, 0.32, 1.275) + 1s;
+}
+
+.trans-border:hover{
+    background-size: 100% 100%;
+}
+
+.trans-input{
+    background: linear-gradient(to top,#f25353 0%, #f25353 1px, transparent 1px) no-repeat left bottom / 0  100%;
+    transition: background-size cubic-bezier(0.175, 0.885, 0.32, 1.275) + 1s;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--color-inversed60);
+}
+
+.trans-input:hover{
+    background-size: 100% 100%;
+    border: none;
+}
+
+.trans-input:focus{
+    border-bottom: 1px solid var(--red);
+}
+
+.trans-border-at{
+    background: linear-gradient(to top,#f25353 0%, #f25353 4px, transparent 5px) no-repeat left bottom / 100%  100%;
+
+}
+
+.trans-border1{
+    background: linear-gradient(to top, transparent 10%, #f25353 10.01%, #f25353 40%, transparent 40.01%) no-repeat left bottom / 0 100%;
+    transition: background-size cubic-bezier(0.175, 0.885, 0.32, 1.275) + 1s;
+}
+
+.trans-border1:hover{
+    background-size: 100% 100%;
+}
+
+.trans-border2{
+    background: linear-gradient(to top, transparent 10%, #f25353 10.01%, #f25353 40%, transparent 40.01%) no-repeat left bottom / 100% 100%;
+    transition: background-size cubic-bezier(0.175, 0.885, 0.32, 1.275) + 1s;
+}
+
+.trans-border2:hover{
+    animation: underlined 1s both;
+}
+
+@keyframes underlined{
+    from{
+        background-size:  100% 100%;
+        background-position: bottom right;
+    }
+    50%{
+        background-size:  0 100%;
+        background-position: bottom right;
+    }
+    50.01%{
+        background-position: bottom left;
+    }
+    100%{
+        background-position: bottom left;
+    }
+
+}

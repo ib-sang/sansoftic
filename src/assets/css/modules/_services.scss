@@ -1,0 +1,119 @@
+.services{
+    @extend %container;
+    margin-top: space(6);
+    font-family: 'Inter';
+    overflow: hidden;
+}
+
+.service-title{
+    font-size: em(32);
+}
+
+.service-title2{
+    font-size: em(24);
+    margin-bottom: space(.5);
+}
+
+.service-link{
+    translate: cubic-bezier(.98,0,0,1) + 1s;
+}
+
+.service-link:hover{
+    color: var(--contrast25);
+}
+
+.service-foot-link{
+    color: var(--contrast);
+    font-weight: 700;
+}
+
+.service-icon{
+    width: 20px;
+    svg{
+        vertical-align: top;
+    }
+}
+
+.services-head{
+    width: 60%;
+    margin-bottom: space(2);
+    margin-top: space(2);
+    p{
+        font-size: em(16);
+    }
+    @include down(800){
+        width: 100%;
+    }
+}
+
+.service-body{
+    margin-bottom: space(10);
+    margin-top: space(4);
+    
+}
+
+.service-foot{
+    color: black;
+    margin-top: space(2);
+}
+
+.service-item + .service-item{
+    margin-left: space(2);
+    @include down(720px){
+        margin-left: 0;
+        margin-top: space(6);
+    }
+}
+
+.service-item{
+    border: 1px solid transparent;
+    position: relative;
+    z-index: 2;
+    transform: scale(1) rotate(0deg);
+    transition: cubic-bezier(.98,0,0,1) + 1s;
+    height: 170px;
+    width: calc(100% - 40px);
+    
+}
+
+.service-item-back{
+    background: var(--background-cart);
+    border: 1px solid transparent;
+    padding: space(1);
+    position: absolute;
+    width: 100%;
+    left: 10px;
+    top: 10px;
+    z-index: 6;
+    transform: rotate(0deg);
+    transition: cubic-bezier(.98,0,0,1) + 1s;
+}
+
+.service-item::before{
+    content: '';
+    display: table;
+    width: 100%;
+    height: calc(100% + 10px);
+    background: transparent;
+    border: 1px solid var(--border);
+    z-index: 5;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+}
+
+.service-item:hover{
+    border: 1px solid var(--border);
+    background: var(--background-cart);
+    transform: rotate(-1deg);
+}
+
+.service-item:hover .service-item::before{
+    transform: rotate(2deg);
+}
+
+.service-item:hover .service-item-back{
+    transform: scale(1.01);
+    transform: rotate(2deg);
+    border-color: var(--border);
+}

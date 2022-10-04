@@ -1,0 +1,31 @@
+.methods{
+    @extend %container;
+    margin-top: space(6);
+    padding-top: space(10);
+    padding-bottom: space(10);
+    background: #cccdce;
+    color: #464646;
+    font-family: 'Inter';
+}
+
+.method-title{
+    font-weight: 700;
+    font-size: em(32);
+    color: #2c2c2c;
+}
+
+.method-head{
+    width: 40%;
+    margin-right: space(1);
+    opacity: 0.2;
+}
+
+.method-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    @include down(722){
+        margin-top: space(2);
+    }
+}

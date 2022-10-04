@@ -1,0 +1,64 @@
+.projects{
+    @extend %container;
+    margin-top: space(6);
+    padding-top: space(4);
+    padding-bottom: space(8);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: space(4);
+    background: var(--background-cart);
+    color: rgb(141, 141, 141);
+    font-family: 'Inter';
+    @include down(600){
+        grid-template-columns: 1fr;
+    }
+}
+
+.project-title{
+    font-size: em(24);
+    color: rgb(69, 69, 70);
+}
+
+.projects-title2{
+    font-size: em(24);
+    color: rgb(20, 20, 150);
+    width: 60%;
+}
+
+.projects-sticky{
+    position: sticky;
+    top: space(8);
+    @include down(600){
+        position: static;
+    }
+}
+
+.projects-wrap{
+    position: relative;
+}
+
+.projects-trans{
+    transform: translateY(40px);
+    @include down(720){
+        transform: none;
+    }
+
+}
+
+.projects-description{
+    position: absolute;
+    top: 25%;
+}
+
+.projects-link{
+    display: none;
+}
+
+.projects-wrapping-img{
+    width: 75%;
+    margin-left: auto;
+}
+
+.projects-category{
+    font-family: $font-design;
+}

@@ -1,23 +1,13 @@
 import React, {useState}  from "react";
-import { Link } from "react-router-dom";
-
-import FormInput from "../Forms/FormInput";
+import { Link, useLocation } from "react-router-dom";
+import { HOME } from "../../settings/constants";
+import img from "../../assets/images/logos.png";
 import Icon from "../Icon";
 
-import img from "../../assets/images/ib.jpg"
-
-
-import { PROFILES, PROFILES_EDIT } from "../../settings/constants";
-import { signOutUserStart } from "../../redux/User/user.action";
-import { useDispatch } from "react-redux";
-
 const Header = ()=>{
-    const [search, setSearch] = useState('');
 
-    const [toggle, setToggle] = useState(false);
-    const [toggleThow, setToggleThow] = useState(false);
-
-    const dispatch = useDispatch();
+    const [toggle, setToggle] = useState(false)
+    const { pathname, hash, key } = useLocation();
 
     const handleToggle = ()=>{
         if(toggle){
@@ -27,85 +17,48 @@ const Header = ()=>{
         }
     }
 
-    const handleToggleThow = ()=>{
-        if(toggleThow){
-            setToggleThow(false)
+    const handleActive = (subpath) =>{
+        const path = hash.replace('#', '');
+        const bool = path.indexOf(subpath)
+        if (subpath=='/') {
+            return subpath== path
         }else{
-            setToggleThow(true)
+            if(bool!==-1) return true
+            return false
         }
-    }
-
-    const handleLevel = (level) =>{
-        level = parseInt(level)
-        if(level<30) return 'text-danger';
-        if(level<60 && level>30) return 'text-success';
-        if(level<80 && level>60) return 'text-complete';
-        return 'text-primary'
-    }
-
-    const signOut = () => {
-        dispatch(signOutUserStart())
     }
 
     return(
         <header className="header">
-            <div className="head-item">
-                <form action="" className="head-form">
-                    <FormInput
-                        placeholder="Faire de recherche ici..."
-                        type = "text"
-                        onChange={ e => setSearch(e.target.value) }
-                    >
-                        <Icon name="search1"/>
-                    </FormInput>
-                </form>
-                
+            <div className="header-logo">
+                <Link to={HOME}><img src={img} alt="sansoftic" /></Link>
             </div>
-            <div className="head-item head-notify" >
-                <div className="head-notif" onClick={handleToggleThow}>
-                    <span className="notif-icon"><Icon name="notif1"/></span>
-                    <span className="notif-number">3</span>
-                    <div className={ toggleThow ? "notif-toglle toggle": "notif-toglle notoggle"}>
-                        <div className="notif-toggle-body">
-                            <div className="notives-img">
-                                <Icon name="user"/>
-                            </div>
-                            <div>
-                                <h3 className="notives-title">ANalytics</h3>
-                                <p>Your website's active users count increased by <span className={handleLevel('28%')}>28%</span> in the last week. Great job!</p>
-                            </div>
-                        </div>
-                        <div className="notif-toggle-body">
-                            <div className="notives-img">
-                                <Icon name="user"/>
-                            </div>
-                            <div>
-                                <h3 className="notives-title">ANalytics</h3>
-                                <p>Your website's active users count increased by <span className={handleLevel('68%')}>68%</span> in the last week. Great job!</p>
-                            </div>
-                        </div>
-                        <div className="notif-toggle-foot">
-                            <Link to="" className="btn-notives">View all notifications</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className="head-user flex" onClick={handleToggle}>
-                    <div className="head-picture">
-                        <img src={img} alt="IB Sangaré" />
-                    </div>
-                    <div className="head-name">
-                        IB Sangaré <Icon name="down"/>
-                    </div>
-                    <div className={ toggle ? "notif-togllethow toggle": "notif-togllethow notoggle"}>
-                        <ul className="head-notif-items">
-                            <li><Link to={PROFILES} className="head-notif-link" > <Icon name="user" /> Profile </Link></li>
-                            <li><Link to={PROFILES_EDIT} className="head-notif-link" > <Icon name="pencil" /> Editer le profile </Link></li>
-                            <li><Link to=""  className="head-notif-link"> <Icon name="setting" /> Setting </Link></li>
-                            <li><Link to=""  className="head-notif-link"> <Icon name="user"/> Transaction </Link></li>
+            <div className="header-menu">
+                <span className="head-target" onClick={handleToggle}><Icon name="menu"/></span>
+                
+                <div className={toggle ? "is-toggle ": "no-toggle"} >
+                    <nav className="navbars" onClick={handleToggle}>
+                        <ul className="nav-items">
+                            <li className="nav-item"><Link to={HOME} className="nav-link">Accueil</Link></li>
+                            <li className="nav-item"><Link to='/#services' className="nav-link">Services</Link></li>
+                            <li className="nav-item"><Link to='#contacts' className="nav-link">Contact</Link></li>
+                            <li className="nav-item"><Link to='#abouts' className="nav-link">A propos</Link></li>
+                            <li className="nav-item"><Link to='#blog' className="nav-link">Blog</Link></li>
                         </ul>
-                        <div className="notif-togllethow-foot"><span onClick={signOut} className='logout'> <Icon name="logout"/> Logout </span></div>
-                    </div>
+                    </nav>
+                    <div>SANSOFTIC est une entreprise digital ...</div>
                 </div>
+            </div>
+            <div className="header-toggle">
+                <nav className="navbars">
+                    <ul className="nav-items">
+                        <li className="nav-item"><Link to={HOME} className={"nav-link trans-border"}>Accueil</Link></li>
+                        <li className="nav-item"><Link to='#services' className={handleActive('services') ? "nav-link trans-border-at":"nav-link trans-border"}>Services</Link></li>
+                        <li className="nav-item"><Link to='#contacts' className={handleActive('contacts') ? "nav-link trans-border-at":"nav-link trans-border"}>Contact</Link></li>
+                        <li className="nav-item"><Link to='/#abouts' className={handleActive('abouts') ? "nav-link trans-border-at":"nav-link trans-border"}>A propos</Link></li>
+                        <li className="nav-item"><Link to='' className={handleActive('blogs') ? "nav-link trans-border-at":"nav-link trans-border"}>Blog</Link></li>
+                    </ul>
+                </nav>
             </div>
         </header>
     );

@@ -1,0 +1,180 @@
+.banner{
+    @extend %container;
+    @extend %shadow;
+    font-family: 'Inter';
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to left, #12748c 50%, #feffff 50%);
+    padding-top: space(12);
+    padding-bottom: space(14);
+    position: relative;
+    overflow: hidden;
+    @include down(1080){
+        background: #12748c;
+        grid-template-columns: 1fr;
+        grid-template-areas: "text"
+                             "img";
+        padding-top: space(4);
+        padding-bottom: space(8);
+    }
+    @include down(600){
+        grid-template-areas: "img"
+                             "text";
+        background: #12748c;
+        position: static;
+        padding-bottom: space(6);
+    }
+}
+
+.banner-play{
+    position: absolute;
+    left: calc(50% + 3px);
+    bottom: 17px;
+    padding: 15px;
+    border-radius: 50%;
+    opacity: 1;
+    z-index: 5;
+    cursor: pointer;
+    transition: cubic-bezier(.98,0,0,1) + 1s;
+    @include down(1080){
+        left: auto;
+        right: -5px;
+        bottom: 30px;
+    }
+    @include down(600){
+        display: none;
+    }
+    @include down(400){
+        display: initial;
+        bottom: calc(30% + 2px);
+    }
+    
+}
+
+.banner-playing{
+    color: #12748c;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    // background: content-box radial-gradient(crimson, skyblue);
+    background-color: #feffffde;
+    opacity: 0.8;
+    border-radius: 50%;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+    .icon{
+        width: 12px;
+        height: 12px;
+        vertical-align: middle;
+        padding-bottom: 3px;
+        padding-left: 1px;
+    }
+}
+
+.banner-animated{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 15px;
+    left: calc(50% + 3px);
+    background: content-box radial-gradient( #feffff 20%, #12748c 10%, #90c7d4 30%) no-repeat;
+    z-index: 2;
+    animation: looped infinite cubic-bezier(0.175, 0.885, 0.32, 1.275) + 2s;
+    opacity: 0.4;
+    @include down(1080){
+        left: auto;
+        right: -6px;
+        bottom: 28px;
+    }
+    @include down(600){
+        display: none;
+    }
+    @include down(400){
+        display: initial;
+        bottom: 30%;
+    }
+}
+
+.banner-play:hover.banner-animated{
+    animation: both !important;
+}
+
+
+
+.banner-img{
+    overflow: hidden;
+    height: 380px;
+    width: calc(50% - 10px);
+    position: absolute;
+    top: 60px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 10px;
+    @include down(1080){
+        position: initial;
+        width: 100%;
+        grid-area: img;
+        margin-top: space(2);
+    }
+    @include down(450){
+        display: none;
+    }
+}
+
+.banner-definition{
+    color: #feffff;
+    padding-left: space(6);
+    @include down(1080){
+        position: initial;
+        width: 100%;
+        grid-area: text;
+        padding-left: 0;
+    }
+    
+}
+
+.banner-title{
+    font-size: em(44);
+    color: #feffff;
+    margin-bottom: space(3);
+    @include down(1080){
+        margin-bottom: space(1);
+        font-size: em(30);
+    }
+    @include down(600){
+        font-size: em(28);
+    }
+}
+
+.banner-para{
+    font-size: em(22);
+    @include down(1080){
+        font-size: em(18);
+    }
+    @include down(600){
+        font-size: em(16);
+    }
+}
+
+@keyframes looped{
+    10%{
+        background: content-box radial-gradient(#feffff 20%, #12748c 30%, #90c7d4 40%) no-repeat;
+    }
+    30%{
+        background: content-box radial-gradient(#feffff 30%, #12748c 40%, #90c7d4 50%) no-repeat;
+    }
+    50%{
+        background: content-box radial-gradient(#feffff 40%, #12748c 50%, #90c7d4 60%) no-repeat;
+    }
+    70%{
+    }
+    90%{
+        background: content-box radial-gradient(#feffff 50%, #12748c 60%, #90c7d4 70%) no-repeat;
+    }
+    100%{
+        background: content-box radial-gradient(#feffff 60%, #12748c 100%, #12748c 80%) no-repeat;
+    }
+}
