@@ -49,7 +49,7 @@ Digital Creative enterprise Specializingin: Video Production, wed Design, Brandi
                     <h2 className="foot-title2">Langues</h2>
                     <ul className="foot-social">
                         <li><span className="foot-social-link" onClick={()=>handleLink("https://sansoftic.net", "_self")}>Français</span> </li>
-                        <li><span className="foot-social-link" onClick={()=>handleLink("https://en.sansoftic.net", "_self")} className="foot-social-en">English</span> </li>
+                        <li><span className="foot-social-link foot-social-en" onClick={()=>handleLink("https://en.sansoftic.net", "_self")}>English</span> </li>
                     </ul>
                 </div>
             </div>

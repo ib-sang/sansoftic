@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import img from '../../../assets/images/ib.jpg'
+import imgHospital from '../../../assets/images/p1.png'
+import imgMoney from '../../../assets/images/p2.png'
+import imgTelecom from '../../../assets/images/p3.png'
+import imgIbfolio from '../../../assets/images/p4.png'
 
 const ProjectHome = () => {
 
@@ -24,7 +27,7 @@ const ProjectHome = () => {
                         <Link to='' className="projects-link">View project</Link>
                     </div>
                     <div className="projects-wrapping-img">
-                        <img src={img} alt="" />
+                        <img src={imgMoney} alt="" />
                     </div>
                 </div>
                 <div className="projects-wrap projects-trans">
@@ -34,7 +37,7 @@ const ProjectHome = () => {
                         <Link to='' className="projects-link">View project</Link>
                     </div>
                     <div className="projects-wrapping-img">
-                        <img src={img} alt="" />
+                        <img src={imgHospital} alt="" />
                     </div>
                 </div>
                 <div className="projects-wrap">
@@ -44,17 +47,17 @@ const ProjectHome = () => {
                         <Link to='' className="projects-link">View project</Link>
                     </div>
                     <div className="projects-wrapping-img">
-                        <img src={img} alt="" />
+                        <img src={imgTelecom} alt="" />
                     </div>
                 </div>
                 <div className="projects-wrap projects-trans">
                     <div className="projects-description">
-                        <span className="projects-category">Audit & Consult</span>
-                        <h2 className="projects-title2">The Assistance Soutenance</h2>
+                        <span className="projects-category">E-service</span>
+                        <h2 className="projects-title2">My Portolio</h2>
                         <Link to='' className="projects-link">View project</Link>
                     </div>
                     <div className="projects-wrapping-img">
-                        <img src={img} alt="" />
+                        <img src={imgIbfolio} alt="" />
                     </div>
                 </div>
 
